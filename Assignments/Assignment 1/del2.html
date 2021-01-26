@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<title>Mattias Webbsida - Del 2</title>
+	<meta charset="utf-8">
+	<style>
+	               body{
+	                   background-color:Ivory;
+	                   background-image: url("fade.png");
+	                   background-repeat: repeat-x;
+	                   color: maroon;
+	                   }
+	               #grad1{
+	                   height: 300px;
+	                   background-color: Ivory;
+	                   background-image: linear-gradient(LightSalmon, Ivory);
+	               }
+	</style>
+</head>
+<body>
+	<h1>Inlämning 1 del 2</h1>
+	<p><code>Av: Mattias Ståhlberg</code></p>
+	<p><code><a href="del1.html">Länk till del 1</a></code></p>
+	<div id="main-content">
+		<h3>Fråga 1: Förklara kort vad ett element, attribut och värde är för något.</h3>
+		<p>Ett element är en typ av kodkommando, de är det som säger åt datorn vad som ska hända/visas.
+			Det kan t.ex. vara en paragraf av text (p) som vanligtvis byggs upp med en starttagg - innehåll -
+		sluttagg.<br>
+		Attribut och värden ger extra information till ett elementet. Ett attribut består oftast av ett
+		namn och ett värde. Elementet (a) t.ex. används bl.a. för att referera till andra hemsidor på
+		internet genom attributet <code>href="värde"</code> där <code>värde</code> är länken till
+		websidan.</p>
+		<h3>Fråga 2: Förklara vad HTTP är för något och vad ett kommunikationsprotokoll innebär.</h3>
+		<p><strong>HTTP</strong> är en typ av kommunikationsprotokoll som används för att överföra och
+		ladda webbsidor på internet via World Wide Web (WWW). HTTP står för <em>HyperText Transfer
+		Protocol</em>.<br>
+		Ett <strong>kommunikationsprotokoll</strong> är en typ av överenskommelse mellan flera parter om
+		hur man ska kommunicera. Protokollen definierar de regler, syntax, semantik och även
+		synkronisationen som möjliggör kommunikationen.</p>
+		<h3>Fråga 3: Vilka är W3C och vilken är deras huvudsakliga uppgift?</h3>
+		<p><strong><em>World Wide Web Consortium</em></strong> (W3C) är ett industrikonsortium (en
+		sammanslutning mellan människor eller företag för att samarbeta tillsammans mot ett specifikt
+		mål) som arbetar med att utveckla tekniska protokoll, standarder och programvaror för WWW.<br>
+		Genom dessa standarder blir det enklare för utvecklare att snabbt komma igång och fortsätta
+		utveckling på hemsidor eller protokoll andra har programmerat.</p>
+		<h3>Fråga 4: Vad står WWW för och vad är detta för något?</h3>
+		<p><strong>WWW</strong> står för <strong><em>World Wide Web</em></strong> vilket är en typ av
+		tjänst som gör webbsidor och andra typer av filer tillgängliga för alla via internet.</p>
+		<h3>Fråga 5: En typisk internetadress kan se ut på följande vis
+		<code>http://facebook.com/home.php</code>.</h3>
+		<ul>
+			<li><strong>Vad kallas denna internetadress på fackspråk (en förkortning)?</strong></li>
+			<li><strong>Vad betyder denna förkortning?</strong></li>
+			<li><strong>Vad kallas a) <code>http://</code>, b) <code>www.facebook.com</code> och c)
+			<code>/home.php</code></strong>?</li>
+		</ul>
+		<p>Den typen av internetadress kallas på fackspråk för <strong>URL</strong> som står för
+		<strong><em>Uniform Resource Locator</em></strong>. URL är en typ av teckensträng som
+		identifierar en viss adress på internet</p>
+		<ol type="a">
+			<li><code>http://</code> visar vilken typ av protokoll som ska användas, i detta fall är
+			protokollet <code>http</code>.</li>
+			<li><code>www.facebook.com</code> hänvisar till vilken domän som man ska till, I detta fallet är
+			det facebook.</li>
+			<li><code>/home.php</code> visar exakt vilken fil man vill komma till, i detta fall home
+			sidan.</li>
+		</ol>
+		<h3>Fråga 6: Vad använder vi kommunikationsprotokollet FTP till?</h3>
+		<p><strong>FTP (File Transfer Protocol)</strong> är ett filöverföringsprotokoll för internet och
+		används för att t.ex. föra över texter och filer från en server till en annan klient via ett
+		datornätverk. Påminner mig om Github, fast lite mer primitivt.</p>
+		<h3>Fråga 7: Vilken modell bygger HTTP på? Modellen beskriver förhållandet mellan en dator som
+		svarar och en dator som ställer frågor om att få se webbplatserna.</h3>
+		<p><strong>HTTP</strong> fungerar som ett "begära-svara" protokoll och använder modellen
+		client-server. Klienten kan t.ex. vara en webbläsare och serven är en dator som webbplatsen
+		ligger på. Webbläsaren kan göra en http begäran till serven där filerna ligger.</p>
+		<h3>Fråga 8: Vad står HTML för och vilket typ av språk är detta?</h3>
+		<p><strong>HTML</strong> står för <strong><em>HyperText Markup Language</em></strong> och är ett
+		märkespråk för hypertext. Hypertext är en text som med hjälp av hyperlänkar är förbunden med
+		andra texter.</p>
+		<h3>Fråga 9: Varför använder vi oss av indentering (indrag) när vi skriver HTML-kod?</h3>
+		<p>Vi använder oss av indentering i vår kod för att öka läsbarheten av koden. Ju högre läsbarhet
+		en kod har desto enklare blir det att orientera sig i den och få en bättre överblick. Man kan
+		lättare se vilka element som ligger i vilka genom indentering.</p>
+		<h3>Fråga 10: Blir det någon skillnad på utseendet av sidan när du indenterar din HTML-kod?</h3>
+		<p>Utseendemässigt på webbsidan blir det ingen skillnad om man indenterar i sin kod. Detta för
+		att det inte spelar någon roll för datorn om man använder indentering eller inte när den läser in
+		koden. Kompilatorn ignorerar identeringar vid kompilering precis som den ignorerar
+		kommentarer.</p>
+		<h3>Fråga 11: Varför tror du att vi lär oss behärska HTML-kod från grunden till skillnad från att
+		generera HTML-kod med hjälp av s.k. WYSIWYG-programvaror och HTML-generatorer?</h3>
+		<p>Vi lär oss grunden för att vi ska få en bättre förståelse för hur man programmerar HTML-kod.
+		Då man börjar att lära sig ett nytt programmeringsspråk är det bra praktis att alltid börja med
+		det fundamentala som att bara förstå språkets syntax.<br>
+		Sitter man bara och kopierar och klistrar in från en HTML-generator så har man i princip ingen
+		aning om vad majoriteten av vad koden gör. Genom att bygga upp program från grunden får man mer
+		kontroll över det man jobbar med då man vet exakt vad programmet innehåller.</p>
+		<h3>Fråga 12: Vilka två delar består ett HTML-dokument av? Vilken sorts information finns i
+		respektive del?</h3>
+		<p>Ett HTML-dokument består av två delar, <em>head</em> och <em>body</em>. I <em>head</em> finns
+		det information om webbplatsen som inte syns på webbsidan. Det kan då t.ex. vara titeln på
+		hemsidan, författaren för webbplatsen, länkningen till css-dokumentet eller teckenuppsättningen
+		man använder, alltså den style man använder i större delen webbsidan.<br>
+		I body skriver man all kod som man vill ska synas på webbplatsen. Här kan man skriva rubriker,
+		paragrafer, listor, lägga till bilder, länka till andra hemsidor, ect.</p>
+		<h3>Fråga 13: Varför har vi s.k. HTML-kommentarer i vår kod?</h3>
+		<p>Tänk dig ett scenariot då du lämnar ditt program en månad eller två och sen kommer tillbaka
+		för att fortsätta med arbetet. Då är det bra att ha kommentarer på grejer så att man snabbare
+		kommer in i hur programmet var uppbyggt. Man använder kommentarer för att det ska vara lättare
+		att förstå vad delarna av koden gör för något. Har man väldigt mycket kod eller det är fler som
+		arbetar på programmet är det vikitgt att kommentera för att kanske som sagt förklara en bit kod,
+		eller ställa frågor. Genom att kommentera sin kod kan man spara en massa tid.</p>
+	</div>
+</body>
+</html>
