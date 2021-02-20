@@ -1,0 +1,14 @@
+/* Declare @charset in case any non-ASCII text occur in .css file. */
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color: Ivory;
+	background-image: url("../images/fade.png");
+	background-repeat: repeat-x;
+	color: maroon;
+}
+
+h1 {
+	text-align: center;
+}

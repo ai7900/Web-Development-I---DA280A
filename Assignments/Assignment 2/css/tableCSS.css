@@ -1,0 +1,26 @@
+/* Declare @charset in case any non-ASCII text occur in .css file. */
+@charset "utf-8";
+/* CSS Document */
+
+/* Svart outline runt table, tablehead och tabledata */
+table, th, td {
+	border: 1px solid black;
+}
+
+/* Sätter texten i center och skapar lite mellanrum */
+th, td {
+	text-align: center;
+	padding: 10px;
+}
+
+/* Sätter bakgrunden för tablehead till grå */
+th {
+	background-color: orange;
+}
+
+/* Sätter bakgrunden för tabledata till vit */
+td {
+	background-color: white;
+}
+
+
