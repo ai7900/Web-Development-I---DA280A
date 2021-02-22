@@ -1,5 +1,5 @@
-/* Declare @charset in case any non-ASCII text occur in .css file. */
 @charset "utf-8";
+/* Declare @charset in case any non-ASCII text occur in .css file. */
 /* CSS Document */
 
 body {
