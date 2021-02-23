@@ -1,0 +1,332 @@
+FORMULÄR
+--------
+
+Formulär i HTML
+---------------
+<form> har följande attribut:
+	action
+	method
+	enctype
+	accept-charset
+	accept
+	name
+	target
+	novalidate
+	autocomplete
+	
+<input/> Har följande attribut:
+	type
+	name
+	value
+
+Observera att taggen <input/> inte kan innehålla någonting och alltså inte har någon sluttagg.
+
+Textfält (type="text")
+Den vanligaste typen av formulärobjekt är vanliga rutor där man kan skriva en rad med text. text är det förvalda värdet på attributet type, så du behöver inte ange typen för vanliga textfält.
+
+Obligatoriskt attribut:
+	name - textfältets namn. Det namn du anger här kommer att skickas till servern, tillsammans med den text användaren matar in i fältet.
+
+Frivilliga attribut:
+	size - Avgör hur många tecken brett fältet ska vara på skrämen.
+	maxlength - Anger hur många tecken användaren får skriva i fältet.
+
+
+Exempel som visar sändmetoden mailto:
+
+<h1>Hälsokontroll</h1>
+<form method="post" action="mailto:rolf@exempel.com">
+	<p>Hur mår du? <input type="text" name="diagnos" value="prima" size="20"/></p>
+</form>
+
+
+Dold text (type="password")
+Den hrä typen av fält fungerar precis som vanliga textfält, men det användaren skriver visas inte på skärmen. Alla attribut är desamma som för typen text.
+
+Informationen krypteras normalt inte på något sätt innan den skickas från webbläsaren till servern, så den är inte säker bara för att den inte syns på skärmen när man skriver den.
+
+Exempel:
+<h1>Kontroll</h1>
+<form method="post" action="mailto:rolf@exempel.com">
+Skriv lösenordet <input type="password" name="kontroll" maxlength="8" size="8"/>
+</form>
+
+Texten sysn inte på skärmen, men informationen "kontroll=hemligt" skickas alltså i klartext via internet och riskerar då att läsas av illvilliga personer.
+
+Sändknapp (type="submit")
+Har inga obligatoriska attribut
+Frivilliga attribut:
+	name
+	value
+
+attributet name används alltså här för att specificera en grupp knappar, inte för att ge en viss knapp ett namn. I exemplet nedan finns gruppen "knapp" som består av två knappar med värdena "Ja" respektive "Nej":
+
+<h1>Vill du fortsätta?</h1>
+<form method="post" action="mailto:rolf@exempel.com">
+	<input type="submit" name="knapp" value="Ja"/>
+	<input type="submit" name="knapp" value="Nej"/>
+</form>
+
+
+Återställningsknapp (type="reset")
+Om ditt formulär innehåller många objekt kanske användaren gör fel vid inmatningen och vill börja om från början. Du kan göra det lättare för dina läsare genom att ta med en återställningsknapp i formuläret. När användaren akriverar knappen återställer webbläsaren alla fält i formuläret till deras förvalda värden. Webbläsaren skickar ingen information till serven när man klickar på en återställningsknapp.
+
+Frivilliga attribut:
+	value
+
+Exempel:
+
+<form method="post" action="mailto:rolf@exempel.com">
+	<p>Var ligger Ngorongorokratern?"</p>
+	<p><input name="svar"/></p>
+	<p><input type="submit" value="Skicka"/>
+		<input type="reset"/></p>
+</form>
+
+
+krssrutor (type="checkbox")
+Obligatoriskt attribut:
+	name
+	value
+
+Frivilliga attribut:
+	checked - anger om kryssrutan ska vara ifulld från början.
+
+Exempel:
+<form method="post" action="mailto:rolf@exempel.com">
+	<p>Vad vill du ha i kaffet?</p>
+	<p><input type="checkbox" name="ikaffet" value="socker"/></p>
+	<p><input type="checkbox" name="ikaffet" value="mjölk"/></p>
+	<p><input type"checkbox" name="ikaffet" value="salt"/></p>
+</form>
+
+
+Radioknappar (type="radio")
+Om användaren bara kan välja ett av flera alternativ kan du använda radioknappar. Namnet kommer från knappar som man välde frekvensband med på gamla radioapparater. Om knappen för lågvåg var intryckt och man tryckte in knappen "FM" så åkte långvågsknappen automatiskt ut. Radioknappar i webbformulär fungerar på samma sätt - markerar man en av dem så blir de andra automatiskt avmarkerade.
+
+Radioknappar har samma attribut som kryssrutor, men en (och endast en) radioknapp i varje grupp måste vara förvald med attributet checked. Standarden för HTML5 tillåter att man anger en grupp av radioknapper där ingen är vald från börja, men det ser konstigt ut.
+
+Här är den mellersta knappen förvald:
+<p>Vilken sorts mjölk vill du ha i kaffet</p>
+<form method="post" action="mailto:rolf@exempel.com">
+	<p><input type="radio" name="blekmedel" value="mini"/> Minimjölk<br/>
+	<input type="radio" name="blekmedel" value="midi" checked="checked" />Ekologiskt mellanmjölk<br/>
+	<input type="radio" name="blekmedel" value="maxi"/>Baristamjölk</p>
+</form>
+
+Dolda fält (type="hidden")
+Ibland vill man ha med värden från en webbsida till en annan. Låt oss säga att du ber dina läsare svara på en enkät. På den första sidan får de fylla i namn, adress och ålder, och på sida två vill du visa olika formulär beroende på vilken åldersgrupp de tillhör.. Du har skrivet ett skript eller program på servern som väljer formulär och skickar det till webbläsaren, mmen när det formuläret från sida två skickas tillbaka från webbläsaren finns inte informationen om användarens namn och aderss med. Du kanske vill att formulären ska vara så korta som möjligt och undvika att ha med samma fält i flera formulär. Då kan du med fördel använda dolda fält.
+
+Dolda fält har ett namn och ett värde, precis som de flesta andra dialogobjekt. Skillnaden är att de inte visas för användaren så deras värde kan inte ändras. Webbläsaren skicka tillbaka namnet och värdet på dolda fält tillsammans med de andra fälten, och på så sätt kan servern "komma ihåg" information från tidigare formulär. 
+
+Exempel:
+<input type="hidden" name="skostorlek" value="47" />
+
+När formuläret skickas in tas informationen "skostorlek="47" med.
+
+
+Filer (type="file")
+Ibland vill man låta användaren skicka med filer tillsammans med informationen i formuläret. Webbläsaren visa filfält osm ett textfält där användaren kan skriva in ett filmnan. Brevid textfältet visas en kanpp som användaren kan klicka på för att leta upp filen på hårddisken. Knappen leder till en standarddialog för att öppna filer.
+
+Obligatoriskta attribut:
+	namne - namnet på filobjektet
+
+Frivilliga attribut:
+	value
+	size
+	accept
+	multiple
+	
+Om du har skrivit ett skript som kontrollerar innehållet i HTML-dokument skulle du kunna använda följande formulär:
+
+<h1>HTML-kontroll</h1>
+<form method="post" action="mailto:rolf@exempel.com">
+	<p>Fil att kontrollera:
+	<input type="file" name="fil" accept="text/html" />
+	</p>
+</form>
+
+Jag rekommenderar att du låter bli att använda filobjekt utom i mycket speciella fall. Mekanismen är ineffektiv (Hela filens innehåll kodas om till URL-form innan den skickas såvida du inte anger en annan kodningstyp i formulärets enctype-attribut), och dessutom riskerar du att användaren skicka fel fil eller för stora filer. Om du får en DVD-avbild på 8GB från någon med snabb nätförbindelse kanske din Internet-leverantör vill ha extra betalt för skrivutrymmet. Om sidan är allmänt tillgänglig på Internet finns det inte heller något som hindrar att ovälkomna besökaren skicka virus eller andra illasinnande program.
+
+
+Bilder (type="image")
+Obligatoriskta attribut:
+	name
+	src
+	alt
+
+Frivilliga attribut:
+	align
+	usemap
+	
+Exempel:
+<h1>Var bor du</h1>
+<p>Klicka på din hemort på kartan:</p>
+<form method="post" action="mailto:rolf@exempel.com">
+	<input type="image" name="norden" id="norden" src="norden2.png" align="top"/>
+</form>
+
+
+<textarea>
+Med taggen <textarea> kan du skapa textfält som sträkcer sig över fler än en rad. Det är bra om du låter användaren skriva långa svar eller kommentarar. Observera att du måste ange sluttaggen </textarea> om du använder textareor. Mellan start- och sluttaggen kan du skriva ett förvalt innehåll för fältet. Innehållet i textareor visas ofta med ett teceknsnitt som har fast teckenbredd.
+
+Obligatoriskta attribut:
+	name
+	cols
+	rows
+
+Exempel:
+<h1>Gästbok</h1>
+<p>Skriv gärna in dig i gästboken</p>
+<form method="post" action="mailto:rolf@exempel.com>
+	<textarea name="texten" rows="5" cols="30">
+	Skriv ditt nman och eventuella kommentarer här!
+	</textarea>
+</form>
+
+
+<select>
+Taggen <select> används för att skapa listor, från vilka användaren kan välja ett eller flera element. De olika elementen anges med taggen <option> som vi går igenom härnäst.
+
+Obligatoriskta attribut:
+	name
+
+Frivilliga attribut:
+	size
+	multiple
+
+
+<option>
+De olika elementen i en lista skiljs åt med taggen <option>. Den text som står mellan <option> och </option> blir ett element i listan, och om inget annant har angivits kommer den texten också att skickas till serven när elementet är valt.
+
+Oftast anger man inte sluttaggen </option> i HTML-dokument, eftersom det är underförstått ett ett element slutar när listan slutar eller när nästa element börjar, men som vanligt måste man ha med sluttaggen i XHTML-dokument.
+
+Frivilliga attribut:
+	selected
+	value
+	label
+	
+I nedanstående exempel har jag givit alla element ett värde, vilket gör det lättare att behandla resultatet i ett skript:
+
+<p>Markera dina intressen i listan</p>
+<form method="post" action="mailto:rolf@exempel.com">
+	<select name="intresse" multiple="multiple" size="4">
+		<option value="1">Science Fiction
+		<option value="2" selected="selected">Musik
+		<option value="3">Jonglering
+		<option value="4" selected="selected">Programmering
+		<option value="5">Mat och sömn
+	</select>
+</form>
+
+
+<optgroup>
+Med denna tagg kan man gruppera elementen i listor och därmed skapa hierarkiska menyer eller listor i ett formulär. Taggen ska stå inuti <select> och ska innehålla en eller flera <option>-taggar. <optgroup> kan ha två attribut: label, som anger den text som visas för gruppen, och disable, som vi snart kommer att gå igenom. Här är exemplet för taggen <option>, med elementen indelade i två grupper.
+
+<p>Markera dina intressen i listan</p>
+<form method="post" action="mailto:rolf@exempel.com>
+	<select name="intresse" multiple="multiple" size="7">
+		<optgroup label="Medier">
+			<option value="1">Science Fiction
+			<option value="2" selected="selected">Musik>
+		</optgroup>
+		<optgroup label="Annat">
+			<option value="3>Jonglering
+			<option value="4">Programmering
+			<option value="5">Mat och sömn
+		</optgroup>
+	</select>
+</form>
+
+För långa listor är detta alltså en mycket bra funktion. Rätt använd gör den att de som har webbläsare med stöd för taggen får en mer överskådlig lista utan att det ser konstigt ut i andra webbläsare.
+
+
+<button>
+Denna tagg kan användas för att skapa sändknappar och återställningsknappar, men man kan också skapa knappar som inte har någon funktion alls. Låter det dumt? Sådana knappar har ingen egen funktion i HTML, men man kan ange att ett klientskript ska köras när användaren skilcka på knappen. Skriptet kan sedan innehålla en massa avancerade funktioner. Vi kommer att proata mer om skript senare i boken.
+
+<button> kan ha attributen name, value och type. name och value fungerar precis som attributen i <input/>. type kan ha värderna submit (förvald), reset och button. submit och reset ger sänd-respektie återställningsknappar och button ger en knapp utan funktion. 
+
+Fördelen med <button> framför knappar skapade med <inptut/> är att taggen <button> kan ha innehåll. På knappen visas det som står mellan <button> och sluttaggen </button>, till exempel en bild. Här är ett exempel:
+
+<form method="post" action="mailto:rolf@exempel.com">
+<button name="skickaknappen" value="Skicka">
+	<img src="paket2.png" alt="paket"/>
+</button>
+<button type="reset>Återställ</button><br/>
+<button type="button" name="ingenting">
+	Klicka här om du har överskottsenergi
+</button>
+</form>
+
+Den första knappen är en sändknapp, eftersom det är den förvalda typen. Den har namnet "skickaknappen" och värdet "Skicka", men i <button> skrivs inte värdet ut. I stället skrivs taggens innehåll på knappen, och idet här fallet innehåller taggen en bild. Den andra knappen är en återställningsknapp och den tredje knappen är en knapp utan funktion. Så här ser formuläret ut.
+
+<label>
+Med denna tagg kan man ge en "ettiket" till formulärobjektet som inte har någon text i vanliga fall, till exempel textfält, kryssrutor och listor. Taggens innehåll blir själva ettiketten.
+
+<label> kan antingen innehålla det formulärobjekt som ska få en atikett eller också kan de hänvisa till objektet med attributet for. Då mpste du ge formulärobjektet en unik identitet med attributet id. Ge sedan attributet i<lable> samma värde.
+
+Här är radioknappssexemplet i ny tappning, där de tre knapparna får sina atiketter på olika sätt:
+
+<p>Vilken sorts mjölk vill du ha i kaffet?</p>
+<form method="post" action="mailto:rolf@exempel.com">
+
+<p><input type="radio" name="blekmedel" valiue="mini"/>Minimjölk<br/></p>
+<label>
+	<input type="radio" name="blekmedel" value="midi" checked="checked"/>
+	Ekologisk mellanmjölk
+</label></br>
+<input type="radio" name="blekmedel" value="maxi" id="maxi"/>
+<label for="maxi>Baristamjölk</label>
+</form>
+
+
+<fieldset> och <legend>
+Dessa taggar används för att gruppera formulärobjekt på en sida. Taggen <filedset> ska innehålla de objekt som ingår i gruppen. Taggen har inga specilla attribut. Man kan även ha objektgrupper inuti andra objektgrupper.
+
+man kan ge en grupp av formulärobjekt en rubrik genom att använda taggen <legend>. Denna tagg ska innehålla rubriken. Här är ett litet längre exempel som visar hur allt fungerar:
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Exempel</title>
+		<style>
+			input.text {
+				position: absolute;
+				left: 8em;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>En ansökan</h1>
+		<form method="post" action="mailto:rolf@exempel.com">
+			<fieldset>
+				<legend>Sökande</legend>
+				<label>Namn
+					<input type="text" class="text" name="name"/>
+				</label><br/>
+				<label>Telefon
+					<input type="text" class="text" name="telefon" />
+				</label><br/>
+				<label>Adress<br/>
+					<textarea name="adress" rows="3" cols="30">
+					</textarea>
+				</label>
+			</fieldset>
+			
+			<fieldset>
+				<legend>Arbetsgivare</legend>
+					<label>Namn <input type="text" class="text" name="arbetsgivare" /></label><br/>
+					<label>Telefon <input type="text" class="text" name="arbetstelefon"/></label><br/>
+					<fieldset>
+						<legend>Anställning</legend>
+							<label><input type="radio" name="heltid" checked="checked/> Heltid</label>
+							<label><input type="radio" name="deltid" />Deltid</label>
+							<label><input type="radio" name="ferie"/>Feriearbete</label>
+					</fieldset>
+				</fieldset>
+			<button>Skicka ansökan</button>
+			<button type="reset>Återställ formuläret</button>
+		</form>
+	</body>
+</html>
