@@ -1,0 +1,33 @@
+SAMMANFATTNING
+--------------
+Formatmallar används för att ge bättre kontroll över utformningen av HTML-element och för att skilja på dokuments presentation och innehåll. CSS (Cascading Style Sheets) är det vanligaste språket för formatmallar.
+
+En mall har formen selektor {egenskap: värde}, till exempel div { margin-left: 2cm } som säger att text markerad med <div> ska ha två centimeter bred vänstermarginal. Man kan ha olika medier (till exempel för utskrifter och bildskärm) och man kan ha mallar i separata dokument så att flera HTML-dokument kan använda samma mall. Vi tittade också på hur man anger webbadresser och hur webbläsaren kombinerar flera formatmallar i kaskader.
+
+I det här kapitlet har vi gått igenom två HTML-taggar: <span>, som används för att märka ut text som ska formateras, och <style>, som används för att lägga in formatmallar i sidhuvudet. Vi har också stött på tre olika attribut som de flesta HTML-taggar har: style som anger format på taggens innehåll, class som används för att dela in taggar i olika klasser och id som ger taggen en egen identitet.
+
+Sedan gick vi igenom de olika måttenheter man kan använda i CSS och hur man anger färger i språket.
+
+FRÅGOR
+------
+* Vad betyder CSS?
+* Vilka är de olika delarna i en formatmall?
+* Vad är skillnaden på attributet style och taggen <style>?
+* Vad används taggen <span> till?
+* Vad används de tre attributen som taggen <style> kan ha till?
+* Nämn två sätt att länka in formatmallar till HTML-dokument.
+* Vilka två attribut kan användas för att skilja mellan olika taggar av samma sort+
+* Nämn tre olika måttenheter som används i CSS.
+* Hur referear man till ett annat malldokument från en mall?
+* Vad har nyckelordet importatn för effekt?
+* Är färgen med kod #444444 ljusare än färgen med kod #555555?
+
+ÖVNINGAR
+--------
+1. Prova några av exemplen i det här kapitlet i en webbläsare.
+
+2. Skriv ett HTML-dokument och använd attributet style för att get att stycke 14 punkters text.
+
+3. Gör en formatmall som ger alla rubriker (<h1> till och med <h6> en ram och röd bakgrund. Lägg in mallen i ett HTML-sidhuvud och prova den.
+
+4. Gör ett malldokument som ger alla stycken 2 centimeter indrag. Länka sedan in mallen med <link> från ett HTML-dokument och provkör resultatet.
