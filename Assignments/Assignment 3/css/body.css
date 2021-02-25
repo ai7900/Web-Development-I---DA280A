@@ -3,11 +3,13 @@
 
 @font-face{
 	font-family: "Fancy";
-	src: url(fonts/Fancy-PersonalUse.ttf) format("truetype");
+	src: url("fonts/Fancy-PersonalUse.ttf") format("truetype");
 }
 
 body {
 	background-color: Ivory;
+	background-image: url("fade.png");
+	background-repeat: repeat-x;
 	color: maroon;
 }
 

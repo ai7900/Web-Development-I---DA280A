@@ -242,7 +242,7 @@ För långa listor är detta alltså en mycket bra funktion. Rätt använd gör 
 
 
 <button>
-Denna tagg kan användas för att skapa sändknappar och återställningsknappar, men man kan också skapa knappar som inte har någon funktion alls. Låter det dumt? Sådana knappar har ingen egen funktion i HTML, men man kan ange att ett klientskript ska köras när användaren skilcka på knappen. Skriptet kan sedan innehålla en massa avancerade funktioner. Vi kommer att proata mer om skript senare i boken.
+Denna tagg kan användas för att skapa sändknappar och återställningsknappar, men man kan också skapa knappar som inte har någon funktion alls. Låter det dumt? Sådana knappar har ingen egen funktion i HTML, men man kan ange att ett klientskript ska köras när användaren skilcka på knappen. Skriptet kan sedan innehålla en massa avancerade funktioner. Vi kommer att prata mer om skript senare i boken.
 
 <button> kan ha attributen name, value och type. name och value fungerar precis som attributen i <input/>. type kan ha värderna submit (förvald), reset och button. submit och reset ger sänd-respektie återställningsknappar och button ger en knapp utan funktion. 
 
@@ -330,3 +330,63 @@ man kan ge en grupp av formulärobjekt en rubrik genom att använda taggen <lege
 		</form>
 	</body>
 </html>
+
+
+Obligatoriskta värden
+Man kan ange att ett värde är obkigatoriskt genom att ta med attributet required i taggarna <input>, <select> och <textarea>. De webbläsare som har stöd för attributet kommer att kräva att användaren matar in ett värde i fälten:
+
+<label>Namn: <input type="text" required/></label>
+
+
+SAMMANFATTNING
+--------------
+Formulär skapas med taggen <form>. I <form> anger man attributen action, som berättar vilken webbadress webbläsaren ska skicka resultatet till, method, som berättar hur informationen ska skickas och enctype, som berättar hur informationen ska kodas. I formuläret kan man ange en mängd olika typer av objek:
+
+Textfält				med <input type="text" />
+Fält med dold text		med <input type="password" />
+Sändknappar				med <input type="submit" />
+Återställningsknappar	med <input type="reset" />
+Kryssrutor				med <input type="checkbox" />
+Radioknappar			med <input type="radio" />
+Dolda fält				med <input type="hide" />
+Filer					med <input type="file" />
+Bilder					med <input type="image" />
+Stora textareor			med <textarea>
+Listrutor				med <select> och <option>
+Knappar					med <button>
+
+Man kan också använda taggarna <label>, som ger formulärobjekt en etikett, och <optgroup>, som grupperar objekten i listrutor, men dessa taggar har ingen effekt i de flesta webbläsare. Taggarna <fieldset> och <legend> grupperar formulärobjekt och ger grupperna etiketter
+
+När användaren är klar med formuläret kodas obketens namn och värden. Det vanligaste sättet att göra det är att koda alla specialtecken som i URL-strängar (med ett procenttecken följt av två hexadecimala siffror) och byta ut mellanslag mot plustecken.
+
+Informationen skickas sedan från webbläsaren till serven på olika sätt beroende på vilken metod man angivit för skriptet. Om metoden är get hamnar informationen i URL:en, och om metoden är post skickas informationen som HTTP-anropets kropp.
+
+I HTML5 har många nya formulärfunktioner tillkommit, men eftersom Internet Explorer inte har haft stöd för dem förrän i version 10 så är det en stor del av alla användare som inte kan utnyttja funktionerna.
+
+
+FRÅGOR
+-------
+* Nämn tre attribut som taggen <form> kan ha?
+* Hur kan man få innehållet i ett ifyllt formulär skickat som e-post?
+* Vad heter taggen som man skapar de flesta typerna av formulärobjekt med?
+* Hur väl skyddad är informationen i password-fält?
+* Vad är skillnaden mellan radioknappar och kryssrutor?
+* Vad får skriptet för information från bildobjekt?
+* Vad kan man använda dolda fält till?
+* Hur definierar man en textarea som är åtta rader hög, 50 tecken bred och har namnet "kommentar"?
+* Kan man välja fler än ett element i en lista?
+* När kan man vilja ha en knapp utan funktion?
+* Var får man ange taggen <optgroup>?
+* Vilka två attribut styr hur man kommer åt formulärobjekt från tagentbordet?
+* Vad heter taggen som man grupperar formulärobjekt med?
+* Nämn minst typer av formulärobjekt som tillkommit i HTML5.
+* Hur kodas informationen i ett formulär innan den skickas?
+* Vilken är den viktigaste skillnaden mellan metoderna get och post?
+
+ÖVNINGAR
+--------
+1. Skapa ett formulär med ett enda textfält och en sändknapp utan namnattribut. Använd action-url med metoden "mailto:", så att formuläret innehåll skickas till dig med e-post.
+
+2. Skapa en enkät med fyra frågor. Använd olika formulärobjekt för alla frågor: radioknappar, kryssrutor, en popup-lista och en lista där användaren kan välja flera alternativ.
+
+3. Om du är van att läsa teknisk information på engelska, googla efter "recover password" plus namnet på webbläsaren du brukar använda. Följ instruktionerna (fast undvik att installera program om möjligt - de kan innehålla skadlig programvara) och se hur många av dina hemliga lösenord som din webbläsare ha sparat på din hårddisk. Googla sedan på "securing" plus namnet på webbläsaren och följ instruktionerna för att minska riskerna.
