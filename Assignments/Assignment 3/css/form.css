@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+/* Save variables in :root pseudo-class */
+:root {
+	--main-border-color: black;
+	--main-border-radius: 4px;
+}
+
+fieldset {
+	width: 75%;
+	border-radius: 8px;
+}
+
+input[type=text] {
+	border: 2px solid var(--main-border-color);
+	border-radius: var(--main-border-radius);
+}
+
+input[type=email] {
+	border: 2px solid var(--main-border-color);
+	border-radius: var(--main-border-radius);
+	color: blue;
+}
+
+textarea {
+	padding: 12px 20px;
+	border: 2px solid var(--main-border-color);
+	border-radius: var(--main-border-radius);
+	background-color: #f8f8f8;
+}
+

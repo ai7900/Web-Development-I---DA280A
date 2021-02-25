@@ -1,26 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sv">
-	<head>
-		<meta charset="utf-8"/>
-		<title>Formulär test</title>
-		<link href="stylesheets/bodyCSS.css" rel="stylesheet" type="text/css">
-	</head>
-	<body>
-		<h1> Form </h1>
-		<!--
-		<form action="server.php" method="get">
-		Förnamn: <input type="text" name="firstname">
-		Efternamn: <input type="text" name="lastname">
-		<input type="submit" value="Skicka">
-		</form>
-		-->
+<head>
+	<meta charset="utf-8">
+	<title>Uppgift 3 - Blomstemålabladet</title>
+	<link href="css/body.css" rel="stylesheet" type="text/css">
+	<link href="css/form.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<h1>Inlämningsuppgift 3</h1>
+	<h2>Blomstemålabladets enkät</h2>
+	<!-- Skapar ett formulär och definierar med action vart datan ska skickas -->
+	<form action="http://webshare.mah.se/tszagh/response.php" id="user_form" method="get" name=
+	"user_form" target="_blank">
 		
-		<form action="/action_page.php">
-			<label for="fname">First name:</lable><br>
-			<input type="text" id="fname" name="fname" value="John"><br>
-			<label for="lname">Last name:</lable><br>
-			<input type="text" id="lname" name="lname" value="Doe"><br><br>
-			<input type="submit" value="Submit">
-		</form>
-	</body>
+		<!-- delar upp formuläret i olika delar -->
+		<fieldset>
+			
+			<!-- Title: första delen av formuläret -->
+			 <legend><strong>Kontaktuppgifter</strong></legend>
+			 <p>Namn: <input type="text" name="name" placeholder="John Smith" required /></p>
+			 <p>Ålder: <input type="text" name="age" placeholder="24" required /></p>
+		</fieldset>
+		
+		<!-- Andra delen av formuläret -->
+		<fieldset>
+			<legend><strong>Dina besök på blomstermålabladet</strong></legend></br>
+			
+			<!-- Besökfrekvens -->
+			<!-- Radioknappar där endast en kan vara aktiv åt gången -->
+			<label>Hur ofta besöker du blomstermålabladet?</label></br>
+			<input type="radio" name="visit" value="everyDay" required> Varje dag </br>
+			<input type="radio" name="visit" value="everyOtherDay" required> Varannan dag</br>
+			<input type="radio" name="visit" value="everyWeek" required> Varje vecka</br>
+			<input type="radio" name="visit" value="rarely" required> Sällan</br></br>
+			
+			<!-- checkbox-alternativ där flera kan vara ikryssade samtidigt -->
+			<label>Vilka delar av blomstermålabladet brukar du besöka?</label></br>
+			<input type="checkbox" name="visit1" value="news"> Nyheter</br>
+			<input type="checkbox" name="visit2" value="foreign"> Utrikes</br>
+			<input type="checkbox" name="visit3" value="domestic"> Inrikes</br>
+			<input type="checkbox" name="visit4" value="sport"> Sport</br>
+			<input type="checkbox" name="visit5" value="gossip"> Skvaller</br>
+			<input type="checkbox" name="visit6" value="wheater"> Väder</br>
+			<input type="checkbox" name="visit7" value="other"> Övrigt</br></br>
+			
+		</fieldset>
+		
+		<!-- Tredje delen -->
+		<fieldset>
+			<legend><strong>Vinn en T-shirt!</strong></legend>
+			<p> Ni har möjlighet att vinna en vacker T-shirt om ni fyller i följande information: </p>
+			
+			<!-- Det bästa med stället -->
+			<label for="best">Bästa med blomstermålabladet:</label></br>
+			<textarea type="text" id="best" name="best" rows="4" cols="50" placeholder="Jag älskar..."></textarea></br>
+			
+			<!-- Det sämsta med stället -->
+			<label for="worst">Sämsta med blomstermålabladet:</label></br>
+			<textarea type="text" id="worst" name="worst" rows="4" cols="50" placeholder="Jag ogillar..."></textarea>
+			
+			<!-- Epost som kommer att bli spammad -->
+			<p>Epost: <input type="email" name="epost" placeholder="t.ex joe_mama@gmail.com" /></p>
+				
+			<!-- En dropdown meny med olika val där M är förvald -->
+			<p> Storlek: <select name="size">
+				<option value="sizeXS"> XS </option>
+				<option value="sizeS"> S </option>
+				<option value="sizeM" selected> M </option>
+				<option value="sizeL"> L </option>
+				<option value="sizeXL"> XL </option>
+			</select></p>
+			
+		</fieldset>
+		
+		<!-- Sista delen -->
+		<fieldset>
+			
+			<!-- Här kan formuläret skickas vidare eller återställas -->
+			<legend><strong>Skicka/Återställ</strong></legend>
+			<button type="submit">Skicka</button>
+			<button type="reset">Återställ formulär</button>
+		</fieldset>
+	</form>
+</body>
 </html>

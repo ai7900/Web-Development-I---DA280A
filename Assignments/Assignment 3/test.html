@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="sv">
+	<head>
+		<meta charset="utf-8"/>
+		<title> a little test </title>
+		<link href="stylesheets/bodyCSS.css" rel="stylesheet" type="text/css" />
+		<link href="stylesheets/buttonCSS.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<h1> test </h1>
+		<form method="get" name="test_form" action="mailto:idk@gmail.com">
+
+			<fieldset>
+				<legend> TEXTAREA AND SUBMIT TEST</legend>
+				<p> Who are you? </p>
+				
+				<!-- the start and endtag of textarea must be on the same line -->
+				<!-- The placeholder attribut will get overwritten otherwise -->
+				<textarea name="textdata" rows="4" cols="50" placeholder="Describe yourself here..."></textarea></br>
+				
+				<input type="submit" name="submit" accept="text" />
+				<input type="reset" name="reset"/>
+			</fieldset>
+			
+			<fieldset>
+				<legend> BUTTON TEST </legend>
+				<textarea name="textdata" rows="4" cols="20" placeholder="test..."></textarea></br>
+				
+				<!-- Button is by default set to submit -->
+				<button> nothing = submit </button></br>
+				
+				<!-- Button set to buttton does nothing -->
+				<!-- <button> tag defines a clickable button -->
+				<button type="button">Click Me!</button>
+				
+				<!-- Disabled button -->
+				<button type="button" disabled="disabled">Try me!</button> 
+				
+				<button type="button" class="button button1">test</button>
+			</fieldset>
+			
+			<fieldset>
+				<legend> Kontaktuppgifter </legend>
+				<p>Namn: <input type="text" name="name" placeholder="John Smith" required></p>
+				<p>Ålder: <input type="text" name="age" placeholder="420" required> </p>
+			</fieldset>
+		</form>
+	</body>
+</html>
+
+<?php
+
+if(isset($_POST['textdata']){
+	$data = $_POST['textdata'];
+	$fp = fopen('data.txt', 'a');
+	
+	fwrite($fp, $data);
+	fclose($fp);
+	}
+?>

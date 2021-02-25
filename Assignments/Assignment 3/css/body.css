@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face{
+	font-family: "Fancy";
+	src: url(fonts/Fancy-PersonalUse.ttf) format("truetype");
+}
+
+body {
+	background-color: Ivory;
+	color: maroon;
+}
+
+h2 {
+	font-family: "Fancy";
+}

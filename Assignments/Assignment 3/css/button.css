@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+.button {
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+
+.button1 {
+	background-color: white;
+	color: black;
+}
+
+.button1:hover {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.button2 {
+	background-color: #008CBA;
+	color: white;
+}
+
+.button2:hover {
+	background-color: #008CBA;
+	color: white;
+}
