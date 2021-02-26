@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="sv">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Formatmallar - CSS</title>
+		<link href="css/body.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<h1 class="center">Formatmallar -<br>Cascading Style Sheets</h1>
+		<div id="intro">
+			<p>En av de viktigaste nyheterna i HTML 4.0 var stödet för <i>formatmallar</i> (<i>style sheets</i> på engelska). HTML utvecklasdes ursprungligen för vetenskapliga rapporter, dokumentation till program och liknande, där innehållet i dokumenten var det viktiga, inte hur de såg ut på skärmen eller på papper.</p>
+			
+			<p>När man sedan började använda webben till en massa annat ville många få bättre kontroll över hur deras sidor skulle se ut på skärmen. Man hittade på en massa olika trick för att göra layout med tabeller och bilder och Netscape och Microsoft tävlade om att hitta på egna tillägg till HTML så att det skulle gå att få dokumenten finast just på deras webbläsare. Ett tag såg det ganska dystert ut för HTML, eftersom allt fler dokument bara fungerade med en viss webbläsare och ibland bara med en viss version av en webbläsare. HTML-dokument blev också allt svårare att läsa och uppdatera "för hand", eftersom dokumentens innehåll doldes i labyrinter av kryptiska taggar.</p>
+			
+			<p>Formatmallar löser det här problemet på ett bra sätt. Man skiljer återigen på dokumentens innehåll och presentation genom att införa ett nytt språk för presentationsinformation. Dessutom kan man med formatmallar ange hur dokument ska formateras på ett mycket noggrannare sätt än tidigare. Man kan ha en och samma formatmall för en hel webbplats, och man kan ha flera olika mallar för ett och samma dokument, så att man till exempel får olika utseende på skärmen och på utskrifter.</p>
+			
+			<p>Observera att det finns webbläsare som inte bryr sig om formatinformation till exempel vissa webbläsare på handdatoter och mobiltelefoner. Det är därför en bra idé att se till att dina dokument ser någorlunda bra ut även i äldre webbläsare. I praktiken är det här sällan något problem, eftersom mallarna bara innehåller just formatinformation. Om mallen till exempel anger att en viss rubriktyp ska visas med fetstil och två centermeters indrag så blir ju inte dokumentet obegripligt bara för att rubriken ser ut som vanligt.</p>
+		</div>
+		<div id="css">
+			<h2>CSS</h2>
+				<p>Det vanligaste språket man använder för att skriva formatmallar kallas <i>Cascading Style Sheets</i>, ofta förkortat till <em>CSS</em>. Det finns inget i HTML som tvingar en att använda just CSS, men eftersom det är det i särklass mest stödda språket kommer jag att använda det här.</p>
+				
+				<p>CSS nivå 1 fastslogs i slutet av år 1996. Nästa version, CSS nivå 2, kom 1998 och tillförde stöd för olika mediumtyper, nedladdningsbara teckensnitt, utplacering av element och tabeller.</p>
+				
+				<p>CSS version 2.1 är den version vi använder i den här boken. Det är en förhållandevis liten uppdatering av version 2, med en del rättningar och några nya funktioner som redan stöds av de flesta webbläsarna, CSS 2.1 har i skrivande stund varit en <i>Candidate Recommendation</i> i nästan ett år, vilket innebär att små ändringar fortfarande kan komma att göras i delar som bara stöds av ett fåtal webbläsare, men specifikationen som helhet är stabil och alla delar som fungerar i många webbläsare kommer att finnas kvar oförändrade.</p>
+				
+				<p>Arbetet med CSS 3 har pågått i många år, men arbetsgruppen valde att först fokusera på att göra klart CSS 2.1 och CSS 3 vilket är långt ifrån klart. Det finns också ett förslag till en minimal version av CSS 2 anpassad för mobiltelefoner och andra små enheter som kallas <i>CSS Mobile Profile</i>, men specifikationen har efter mer än åtta år ännu inte nått fram ens till Candidate Recommendation.</p>
+				
+				<p>En av anledningarna till att det tar så lång tid att få fram nya standarder är att man numera kräver att det ska finnas två kompletta implementationer av alla detaljer i en specifikation innan den blir en färdig <i>Recommendation</i>. Man tar också fram testviter så att de som utvecklar webbläsare själva lätt ska kunna kontrollera att de uppfyller standarden. Ytterligare en anledning är att standarden är så omfattande. PDF-versionen av specifikationen till CSS 2.1 är mer än 400 sidor lång.</p>
+				
+				<h3>Deklarationer, väljare och egenskaper</h3>
+					<p>En mall som anger att alla rubriker av typer h1 ska vara gröna ser ut så här:</p>
+					<pre>h1 {color: green }</pre>
+					
+					<p>I den här mallen kallas h1 för <i>väljare</i> (<i>selector</i> på engelska), <code>color</code> kallas <i>egenskap</i> (<i>property</i>) och <code>green</code> är egenskapens <i>värde</i> (<i>value</i>). "<code>color: green</code>" kallas tillsammans för en <i>deklaration</i> (<i>declaration</i>). Klamrarna gör det lätt att se var deklarationen för en väljare börjar och slutar. Det finns fler än hundra olika egenskaper som man kan styra med CSS. Här är några exempel, och jag kommer att visa fler senare i kapitlet:</p>
+					
+					<dl>
+						<dt><b>font-size</b></dt>
+							<dd>- textens storlek (teckengrad)</dd>
+						<dt><b>font-family</b></dt>
+							<dd>- textens teckensnitt</dd>
+						<dt><b>background-color</b></dt>
+							<dd>- bakgrundsfärg. Man kan alltså ha olika bakgrundsfärg i olika delar av dokumentet.</dd>
+						<dt><b>letter-spacing</b></dt>
+							<dd>avståndet mellan bokstäverna i texten</dd>
+						<dt><b>border-style</b></dt>
+							<dd>ram runt texten. Värdet kan till exempel vara <code>none</code> (ingen ram), <code>dotted</code> (sträckad ram) eller <code>solid</code> (heldragen linje).</dd>
+					</dl>
+					
+					<p>Man kan ha flera väljare och deklarationer i samma mall. Väljarna skiljs åt med komma och deklarationerna med semikolon. Följande mall anger till exempel att både ordnade och oordnade listor skall visas med teckensittet Garamond på gul bakgrund:</p>
+					<pre>ul, ol{<br>font-family: garamond;<br>background-color: yellow;<br>}</pre>
+					
+					<p>Vi kommer att gå igenom mer om CSS efter hand, men det du har sett här räcker så länge. Jag antar att du vill lära dig att använda mallar i HTML-dokument så fort som möjligt.</p>
+		</div>	
+		<div id="mallar_i_text">
+			<h2>Mallar i text</h2>
+				<p>Det finns flera olika sätt att lägga in formatmallar i HTML. Vi ska först gå igenom hur man gör en mall för enstaka stycken och sedan hur man gör mallar för hela dokument och mallar i egna dokument. När man gör större webbplatser använder man nästa alltid mallar i fristående dokument, eftersom samma malldokument då kan användas från alla HTML-dokument på webbplatsen.</p>
+				
+				<h3>Attribute style</h3>
+					<p>Antag att du vill att ett visst stycke ska vara inramat. Det går att åstakomma genom att ge taggen <code>&lt;p&gt;</code> attributet <code>style</code>. Attributets värde är en mall utan väljare. Detta exempel visar hur man får en dubbel ram runt ett stycke: <a href="css-links/sample1.html" onclick="window.open('css-links/sample1.html', 'newwindow', 'width=450,height=350'); return false;">Exempel</a></p>
+					
+					<p>De enda taggar som <i>inte</i> kan ha attributet <code>style</code> är <code>&lt;base /&gt;, &lt;basefont /&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;script&gt;, &lt;style&gt; och &lt;title&gt;</code>. Det kanske är synd att man inte kan ange ett format för dokumenttiteln, men titeln används ju ofta som namn på det fönster som dokumentet visas i och de flesta operativsystem tvingar alla tilläpningar att ha samma teckensnitt i fönstrens namnrader.</p>
+		</div>
+		<div id="fördefinierade_mallar">
+			<h2>Fördefinierade mallar</h2>
+				<p>Det är bra att kunna byta teckensnitt eller bakgrundsfärg på en rubrik eller några ord, men om man till exempel vill att alla stycken i ett långt dokument ska ha ett visst teckensnitt blir det ganska många <code>style</code>-attribut att skriva. Det är inte speciellt lätthanterligt om man vill göra ändringar, och dokumentet blir både längre och svårare att läsa. De här problemen slipper man om man använder <i>fördefinierade</i> mallar.</p>
+				
+				<p>En fördefinierad mall är helt enkelt en mall som är definierad i förväg, antingen i början av HTML-dokumentet eller i en separat fil. En av de viktigaste poängen med formatmallar är ju att man kan skilja på innehåll och presentation, och när man definierar mallarna i förväg blir HTML-koden ren och enkel. Då är det lätt att förstå och ändra i HTML-koden utan att man råkar förstöra utformningen.</p>
+				
+				<h3>Taggen &lt;style&gt;</h3>
+					<p>Förväxla inte <i>attributet</i> <code>style</code> med <i>taggen</i> <code>&lt;style&gt;</code>. Attributet används till att ändra formatet på ett enda ställe i ett dokument, men taggen <code>&lt;style&gt;</code> kan påverka formatet på alla förekomster av en viss typ av text, till exempel alla stycken eller alla numrerade listor i hela dokumentet.</p>
+					
+					<p>Taggen <code>&lt;style&gt;</code> används precis som attributet med samma namn för att ange en formatmall, men man använder <code>&lt;style&gt;</code> i sidhuvudet. Den angivna mallen gäller sedan i resten av dokumentet. Exemplet nedan visar en formatmall som ger alla stycken markerad med <code>&lt;p&gt;</code> ett indrag på två centimeter och ett teckensnitt utan seriffer: <a href="css-links/sample2.html" onclick="window.open('css-links/sample2.html', 'newwindow', 'width=450,height=350'); return false;">Exempel</a></p>
+					
+					<p>Taggen &lt;style&gt; kan ha tre attribut: <code>type, media</code> och <code>title</code>.</p>
+						<h3>type</h3>
+							<p>Attributet <code>type</code> används för att ange vilket språk som används i formatmallen. För mallar skrivna i CSS ska attributet ha värdet <code>text/css</code>. CSS är det förvalda mallspråket, så <code>type</code> behövs inte om du inte använder flera mallspråk. Mer om detta i slutet av kapitlet.</p>
+							
+						<h3>media</h3>
+							<p>Med hjälp av <code>media</code> kan man lägga in olika formatmallar för olika typer av presentationer, så man kan göra en mall för visning på skärmen och en annan för utskrifter. Det här är de värden som attributet kan ha: </p>
+							<dl>
+								<dt><b>screen</b></dt>
+									<dd>avsett för visning på vanlig bildskärm.</dd>
+									
+								<dt><b>print</b></dt>
+									<dd>avsett för utskrifter</dd>
+									
+								<dt><b>handheld</b></dt>
+									<dd>avsett för handdatorer. De har ofta mycket liten skärm och begränsad bandbredd.</dd>
+									
+								<dt><b>tty</b></dt>
+									<dd>avsett för utskrift på enheter med fast tecken-bredd, till exempel gamla teletype-terminaler eller små handdatorer.</dd>
+									
+								<dt><b>tv</b></dt>
+									<dd>avsett för visning på tv. Tv-apparater har låg upplösning jämfört med bildskärmar och man kan inte räkna med att användarna kan rulla texten.</dd>
+									
+								<dt><b>projection</b></dt>
+									<dd>avsett för projicerade presentationer, där en sida eller bild i taget visas.</dd>
+									
+								<dt><b>aural</b></dt>
+									<dd>avsett för talsyntes. Det är inte bara synskadade som har nytta av syntetiskt tal; nu när kvaliteten på talet börjar bli uthärdligt kan det ibland vara ganska skönt att låta datorn läsa upp långa texter medan man lutar sig tillbaka i stolen och vilar ögonen.</dd>
+								
+								<dt><b>braille</b></dt>
+									<dd>avsett för punktskrift på speciella punktdisplayer som synskadade kan använda för att tillgodogöra sig informationen på webben</dd>
+								
+								<dt><b>embossed</b></dt>
+									<dd>nästan som <code>braille</code> men avsett för skrivare som skriver punktskrift för synskadade.</dd>
+								
+								<dt><b>all</b></dt>
+									<dd>lämpligt för alla enheter.</dd>
+							</dl>
+							
+							<p>De förvalda värdet är <code>screen</code> enligt HTML-standarden, men de flesta webbläsare använder mallar utan <code>media</code>-attribut både till skärmen och till utskrifter, så i praktiken är <code>media="all"</code> det förvalda. Man kan ange flera medier genom att skilja dem åt med kommatecken.</p>
+							
+							<p>Här följer ett exempel med olika mallar för skärm och utskrift: <a href=""></a></p>
+						<h4>title</h4>
+		</div>
+	</body>
+</html>

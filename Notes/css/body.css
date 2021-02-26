@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+.center {
+	text-align: center;
+}
+
+body {
+	background-color: Ivory;
+	max-width: 1000px;
+	word-wrap: break-word;
+}
