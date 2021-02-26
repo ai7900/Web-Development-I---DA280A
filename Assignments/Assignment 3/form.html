@@ -18,31 +18,36 @@
 			
 			<!-- Title: första delen av formuläret -->
 			 <legend><strong>Kontaktuppgifter</strong></legend>
+			 
+			 <!-- Textfält där man fyller i sitt namn -->
 			 <p>Namn: <input type="text" name="name" placeholder="John Smith" required /></p>
+			 
+			 <!-- Textfält där man endast kan skriva in siffror till ålder -->
 			 <p>Ålder: <input type="text" name="age" placeholder="24" required /></p>
+			 
 		</fieldset>
 		
 		<!-- Andra delen av formuläret -->
 		<fieldset>
-			<legend><strong>Dina besök på blomstermålabladet</strong></legend></br>
+			<legend><strong>Dina besök på blomstermålabladet</strong></legend><br>
 			
 			<!-- Besökfrekvens -->
 			<!-- Radioknappar där endast en kan vara aktiv åt gången -->
-			<label>Hur ofta besöker du blomstermålabladet?</label></br>
-			<input type="radio" name="visit" value="everyDay" required> Varje dag </br>
-			<input type="radio" name="visit" value="everyOtherDay" required> Varannan dag</br>
-			<input type="radio" name="visit" value="everyWeek" required> Varje vecka</br>
-			<input type="radio" name="visit" value="rarely" required> Sällan</br></br>
+			<label>Hur ofta besöker du blomstermålabladet?</label><br>
+			<input type="radio" name="visit" value="everyDay" required> Varje dag <br>
+			<input type="radio" name="visit" value="everyOtherDay" required> Varannan dag<br>
+			<input type="radio" name="visit" value="everyWeek" required> Varje vecka<br>
+			<input type="radio" name="visit" value="rarely" required> Sällan<br><br>
 			
 			<!-- checkbox-alternativ där flera kan vara ikryssade samtidigt -->
-			<label>Vilka delar av blomstermålabladet brukar du besöka?</label></br>
-			<input type="checkbox" name="visit1" value="news"> Nyheter</br>
-			<input type="checkbox" name="visit2" value="foreign"> Utrikes</br>
-			<input type="checkbox" name="visit3" value="domestic"> Inrikes</br>
-			<input type="checkbox" name="visit4" value="sport"> Sport</br>
-			<input type="checkbox" name="visit5" value="gossip"> Skvaller</br>
-			<input type="checkbox" name="visit6" value="wheater"> Väder</br>
-			<input type="checkbox" name="visit7" value="other"> Övrigt</br></br>
+			<label>Vilka delar av blomstermålabladet brukar du besöka?</label><br>
+			<input type="checkbox" name="visit1" value="news"> Nyheter<br>
+			<input type="checkbox" name="visit2" value="foreign"> Utrikes<br>
+			<input type="checkbox" name="visit3" value="domestic"> Inrikes<br>
+			<input type="checkbox" name="visit4" value="sport"> Sport<br>
+			<input type="checkbox" name="visit5" value="gossip"> Skvaller<br>
+			<input type="checkbox" name="visit6" value="wheater"> Väder<br>
+			<input type="checkbox" name="visit7" value="other"> Övrigt<br><br>
 			
 		</fieldset>
 		
@@ -51,15 +56,14 @@
 			<legend><strong>Vinn en T-shirt!</strong></legend>
 			<p> Ni har möjlighet att vinna en vacker T-shirt om ni fyller i följande information: </p>
 			
-			<!-- Det bästa med stället -->
-			<label for="best">Bästa med blomstermålabladet:</label></br>
-			<textarea type="text" id="best" name="best" rows="4" cols="50" placeholder="Jag älskar..."></textarea></br>
+			<!-- Textarea är större textfält där man kan skriva me -->
+			<label for="best">Bästa med blomstermålabladet:</label><br>
+			<textarea id="best" name="best" rows="4" cols="50" placeholder="Jag älskar..."></textarea><br>
 			
-			<!-- Det sämsta med stället -->
-			<label for="worst">Sämsta med blomstermålabladet:</label></br>
-			<textarea type="text" id="worst" name="worst" rows="4" cols="50" placeholder="Jag ogillar..."></textarea>
+			<label for="worst">Sämsta med blomstermålabladet:</label><br>
+			<textarea id="worst" name="worst" rows="4" cols="50" placeholder="Jag ogillar..."></textarea>
 			
-			<!-- Epost som kommer att bli spammad -->
+			<!-- Täxtfät som bara tar in epost-adresser: exempel@gmail.com -->
 			<p>Epost: <input type="email" name="epost" placeholder="t.ex joe_mama@gmail.com" /></p>
 				
 			<!-- En dropdown meny med olika val där M är förvald -->
@@ -76,10 +80,13 @@
 		<!-- Sista delen -->
 		<fieldset>
 			
-			<!-- Här kan formuläret skickas vidare eller återställas -->
 			<legend><strong>Skicka/Återställ</strong></legend>
-			<button type="submit">Skicka</button>
-			<button type="reset">Återställ formulär</button>
+			
+			<!-- Knapp för att skicka datan från formuläret till den förvalda adressen i form -->
+			<button type="submit" name="buttonSend" value="send" >Skicka</button>
+			
+			<!-- Knapp för att återställa formuläret -->
+			<button type="reset" name="buttonReset" value="reset">Återställ formulär</button>
 		</fieldset>
 	</form>
 </body>
