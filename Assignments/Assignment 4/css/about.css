@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+/* margin: auto - always align to middel */
+/* img filter attribute doesn't work on Internet Explorer or Edge*/
+
+body{
+	background-color: #DDD;
+}
+
+a{
+	color: white;	
+}
+
+a.hover{
+	background-color: #333;
+}
+
+h3{
+	text-style: italic;
+	text-decoration: underline;
+	font-family: Cambria; 
+}
+
+#meny{
+	background-color: #440a67;
+	border: 3px double #000000;
+	border-radius: 15px;
+	padding: 10px;
+	text-align: center;
+	margin: auto;
+}
+
+
+#main-part{
+	background-color: #F9F9F9;
+	border: 3px double #000000;
+	border-radius: 3px;
+	width: 700px;
+	margin: auto;
+}
+
+.small-txt{
+	font-size: 16px;
+}
+
+.list-style{
+	font-style : italic;
+	font-weight: 600;
+	font-family: Cambria;
+}
+

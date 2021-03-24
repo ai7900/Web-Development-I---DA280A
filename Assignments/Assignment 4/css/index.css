@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+/* margin: auto - always align to middel */
+/* img filter attribute doesn't work on Internet Explorer or Edge*/
+
+body{
+	background-color: #969;
+}
+
+
+#meny{
+	background-color: #440a67;
+	border: 3px double #000000;
+	border-radius: 15px;
+	padding: 10px;
+	text-align: center;
+}
+
+
+#main-part{
+	background-color: #ffe3fe;
+	border: 3px double #000000;
+	border-radius: 30px;
+	text-align: center;
+	width: 700px;
+	margin: auto;
+}
+
+/* Only applies to p within class #main-part */
+#main-part p{
+	font-family: Bahnschrift;
+}
+
+h1, h2, h3{
+	text-align: center;
+}
+
+h1{
+	color: black;
+	background-color: #b4aee8;
+	border: 3px double #000000;
+	border-radius: 15px;
+	font-family: Arial;
+}
+
+h2{
+	background-color: #b4aee8;
+	border: 3px groove #FFFFFF;
+	border-radius: 5px;
+	margin: auto;
+	width: 75%;
+}
+
+h3{
+	font-style: italic;
+}
+
+a{
+	color: #FFFFFF;
+}
+
+img{
+	background-color: white;
+	border: 1px solid #000000;
+	border-radius: 50px;
+	margin: auto;
+	padding: 5px;
+	width: 300px;
+	height: 300px;
+	filter: grayscale(50%); /* Cool stuff, this filter thing */
+}
+

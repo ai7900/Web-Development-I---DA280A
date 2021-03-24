@@ -1,0 +1,44 @@
+<!doctype html>
+	<html lang="sv">
+		<head>
+			<title>Uppgift 4 - CSS</title>
+			<meta charset="utf-8">
+			<link href="css/about.css" rel="stylesheet" type="text/css"/>
+		</head>
+		<body>
+			<div id="meny">
+				<h1 id="menu_header"style="color: white;">Meny</h1>
+				<a href="index.html"> Startsida (om mig) </a><br>
+				<a href="omCSS.html"> Om CSS </a> <br>
+				<a href="CSSmall.html"> Mall för CSS </a>
+			</div><br>
+			<div id="main-part">
+				<h1 style="text-align: center; color: #00F;">Om CSS</h1>
+				
+				<h3>1. Vad är CSS?</h3>
+				
+				<ul class="list-style">
+					<li>Varför finns CSS?</li>
+					<li>Hur använder vi oss av CSS?</li>
+				</ul>
+				
+				<p class="small-txt">CSS står för Cascading Style Sheet (stilmall på svenska) och är ett typ av språk som beskriver presentationen för ett dokument. CSS är ett sätt att anpassa ett dokument efter hur man vill att t.ex. en sida ska se ut, genom CSS kan man ändra saker som typsnitt, storlek, färg och position. XML-eller HTML-dokument har på förhand ingen given utformning utan består endast av uppstrukturad text utan någon som helst tilinformation. Hur texten skrivs ut på en webbsida bestäms av programmet som hanterar dokumentet, vilket i sin tur utgår från programmets inställningar. Med CSS är det möjligt att skapa en stilmall till dokumentet för att forma dokumentet hur man vill att den ska visa saker. Med tekniken har man även möjlighet att anpassa dokument med hänsyn till t.ex. datortyyp och skärmstorlek. CSS finns alltså för att utvecklaren ska få bättre kontroll över vad och hur saker visas i webbläsaren. CSS är tillsammans med HTML och JavaScript det vanligaste sättet att utveckla frontenden för en hemsida. Vill man ändra något i stylingen för flera dokument samtidigt så kan man enkelt ändra några kodrader i CSS dokumentet så kommer det ändra i alla dokument som påverkas av dessa kodrader. Detta är mycket enklare än att sitta i varje dokument och ändra samma specifika sak. Men även om CSS är en av hörnstenarna till att utveckla en bra frontend så har CSS-tekniken ibland kritiserats för att göra arbetet komplicerat för webbutvecklare. Detta beror bland annat på att webbläsarens stöd för CSS-versionerna varierar kraftigt vilket gör det jobbigare för utvecklarna.</p>
+				
+				<p class="small-txt">
+					Ddet finns tre olika sätt att använda CSS; external style sheet, internal style sheet och inline style. Med external style sheet så har man ett separat CSS dokument där man stylar webbsidan. Det betyder att i alla html dokument har man ett länkat element i head taggen där man länkar till CSS dokumentet (alla sidor länkar till samma dokument). All styling för alla html sidor hamnar då i samma dokument och det blir enkelt att återanvända CSS klasser i html dokumentet. Internal style sheet är när man stylar ett dokument i samma dokument som html koden står i. Då använder man style element i head taggen i html dokumentet där man lägger in all styling för det specifika dokumentet. Inline style är när man sätter ett style element på varje html tagg som man vill styla. När man stylar med internal style sheet eller inline style kan det lätt bli rörigt att ha CSS kod och HTML kod tillsammans i samma dokument vilket kan leda till att det blir krångligt att ändra i det i efterhand. Äldre webbläsare kan till och med tolka CSS koden som html kod och därav visa upp det direkt på webbsidan. Därför rekommenderas det att man använder external style sheet när man ska styla en webbsida. 
+				</p>
+				
+				<h3>2. Det finns olika versioner av CSS:</h3>
+				
+				<ul class="list-style">
+					<li>Vilka versioner finns det?</li>
+					<li>Varför finns det olika versioner? (Varför inte bara en?)</li>
+					<li>Varför är det viktigt att veta vilken version som en viss CSS-egenskap tillhör? (Kan detta påverka webbplatsen?)</li>
+				</ul>
+				
+				<p class="small-txt">
+					Det finns tre olika versioner av CSS, CSS1, CSS2 och CSS3. CSS1 var den första versionen som kom ut 1996. Denna version var ganska simpel då man endast hade de mest grundläggande funktionera. CSS2 kom ut 1998 och det var egentligen här CSS blev populärt och började stödjas av webbläsare. CSS2 byggde på CSS1, skillnaden mellan dem var att bara hade lagt till fler funktioner. CSS3 kom ut 1999 och det är denna versionen vi fortfarande använder i nuläget. CSS3 är utvecklat utifrån CSS2 och har då fler funktioner än CSS2. CSS3 är dock lite annorlunda ifrån CSS1 och CSS2 då CSS3 är indelat i moduler. Det betyder att det inte kommer komma ut en CSS4. Man utvecklar istället bara vidare på modulerna i CSS3. Det kommer hela tiden ut nya moduler till CSS3 och när funktionerna i dessa moduler uppdateras blir de level 4 (inte CSS4). Alla CSS versioner bygger på sina föregående versioner, eller som i CSS3 fall så bygger modulerna som är level 4 på level 3. Det finns olika versioner av CSS då alla program inte stöder alla versioner av CSS. Detta kan t.ex bero på att man kanske inte har stöd för de nyaste funktionerna i CSS i sitt program (då man kör äldre program som inte kan kompileras rätt med den nya koden) och då behöver använda sig av en äldre version av CSS. Det är viktigt att veta vilken CSS version en CSS-egenskap tillhör då olika program stöder olika versioner av CSS. Om man inte har koll på vilken version egenskapen tillhör så kan det bli att t.ex. sidan bara funkar i vissa webbläsare som stöder versionen men inte andra. Vill man då vara säker på att sidan ska funka i alla webbläsare så får man kolla upp vilka egenskaper som funkar i alla webbläsare och använda dem.
+				</p>
+			</div>
+		</body>
+	</html>
