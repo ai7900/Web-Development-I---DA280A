@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+header{
+	background-color: silver;
+}
+
+nav{
+	background-color: #888;
+}
+
+footer{
+	background-color: #ddd;
+}
+
+article{
+	background-color: #c0c0c0;
+	padding: 5px;
+}
+
+article article{
+	background-color: rgba(95%, 95%, 95%, 1);
+	margin: 10px;
+}
+
+h1.h2.h3.h4 {margin: 0;}
+p {margin-top: 0;}
+
+section#news{
+	background-color: hsl(0, 0%, 93%);
+	width: 150px;
+	float: left;
+}
+
+section#post{
+	margin-left: 160px;
+	background-color: #EEE;
+}
+
+aside{
+	background-color: white;
+	width: 100px;
+	float: right;
+	padding: 3px;
+}
+
+aside p{
+	font-size: small;
+	margin-bottom: 0;
+}
+
+hgroup{
+	background-color: #333;
+	color: #EEE;
+	margin-bottom: 5px;
+}

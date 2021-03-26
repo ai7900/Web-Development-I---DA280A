@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+body{
+	width: 1200px;
+	margin: auto;
+	font-family: Arial;
+	font-size: 18px;
+}
+
+header{
+	border-style: solid;
+	border-width: 3px;
+	padding: 0 20px 0 20px;
+	background-color: #46205e;
+}
+
+header h1{
+	color: #FFF;
+	font-family: consolas;
+	font-size: 100px;
+	margin: 30px 0 40px 20px;
+}
+
+header p{
+	color: #FFF;
+	text-align: right;
+	margin: -90px 0 20px 0;
+}
+
+nav{
+	border-style: solid;
+	border-width: 3px;
+	background-color: #D1D1D1;
+	height: 40px;
+	padding-top: 20px;
+}
+
+nav a{
+	padding: 20px 35px 20px 35px;
+	text-decoration: none;
+	color: #000;
+	font-weight: bold;
+}
+
+nav a:hover, a:focus{
+	background-color: #4C232A;
+	transition: background-color 1s linear; 
+	color: #FFF;
+}
+
+section{
+	border-style: solid;
+	border-width: 3px;
+	padding: 20px;
+}
+
+section::after {
+	content: " "; 
+   	visibility: hidden; 
+   	display: block; 
+   	height: 0; 
+   	clear: both;
+}
+
+/* Startpage styling */
+#divStart{
+	width: 900px;
+	float: left;
+}
+
+article{
+	border-style: solid;
+	border-width: 3px;
+	padding: 20px;
+	width: 175px;
+	float: right;
+	margin-top: 40px;
+	background-color: #D1D1D1;
+}
+
+/* Om CSS styling */
+#divAboutCSS{
+	width: 900px;
+	float: left;
+}
+
+#divAboutCSS p{font-size: 16px;}
+#divAboutCSS h3{text-decoration: underline;}
+#divAboutCSS ul{font-style: italic; font-weight: bold;}
+
+/* Om mig styling */
+span.bold{
+	font-weight: 700;
+}
+
+#divAboutMe img{
+	display: block;
+	margin: auto;
+	width: 300px;
+	height: 300px;
+	border: 5px double #000;
+	border-radius: 25px;
+}
+
+footer{
+	text-align: center;
+	border-style: solid;
+	border-width: 3px;
+	padding: 5px;
+	background-color: #D1D1D1;
+}

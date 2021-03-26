@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="sv">
+	<head>
+		<!-- Meta data som inte syns på hemsidan -->
+		<meta charset="utf-8"/>
+		<title>Startsida</title>
+		
+		<link rel="stylesheet" href="style.css" type="text/css">
+	</head>
+	
+	<body>
+		
+		<!-- Headern med en h1 och lite info -->
+		<header>
+			<h1>Min Webbsida</h1>
+			<p>Inlämningsuppgift 5<br>
+			Mattias Ståhlberg<br>
+			ai7900</p>
+		</header>
+		
+		<!-- Navigationsmeny till resten av sidorna -->
+		<nav>
+			<a href="start.html">Start</a>
+			<a href="OmMig.html">Om mig</a>
+			<a href="omCSS.html">Om CSS</a>
+			<a href="ect.html">Övrigt</a>
+		</nav>
+			
+		<section>
+			
+			<!-- En större div för att rama in h2 + dess paragrafer -->
+			<div id="divStart">
+				<h2>Skillnaden mellan inline CSS och extern stilmall</h2>
+				
+				<p>Det finns flera olika sätt att styla ett HTML dokument. Två av sätten är inline style och extern stilmall.</p>
+				
+				<p>Inline style är när man sätter ett style element p åvarje html-tagg man vill styla. Inom de style element skriver man den CSS kod man vill styla HTML koden med. Man kan skriva hur många attribut man vill inom style element, det finns ingen begränsning.</p>
+				
+				<p>Fördelen med inline style är att man kan vara väldigt specifik för vilket HTML-tagg man vill styla. Den är bra att använda när man ska styla med Javascript som ofta använder inline style.<br>
+				Nackdelen med inline style är dock att det lätt kan bli rörigt att ha CSS kod och HTML kod tillsammans i samma dokument, det kan även bli krångligt att göra ändringar i efterhand. Äldre webbläsare kan till och med tolka CSS koden som html kod och därav visa upp det direkt på webbsidan.</p>
+				
+				<p>Med external stylesheet så har man ett separat CSS dokument där man stylar webbsidan. Detta innebär att alla html dokument som har ett link-element i head taggen som är länkat till CSS-dokumentet får den stilen som är defininerad i CSS-dokumentet. Alla HTML-sidor får nu samma styling som använder sig av samma dokument.</p>
+				
+				<p>Fördelen med en extern stilmall är att man samlar all styling på samma ställe. Detta gör att det blir enklare att återanvända CSS klasser till alla html dokument som är kopplade till CSS-dokumentet. Koden i html-dokumentet blir även renare och mer lättläst genom att separera HTML- och CSS-kod. Nackdelen med en extern stilmall är att om man stylar alla HTML sidor i samma CSS dokument kan det dokumentet bli väldigt långt och rörigt.</p>
+			</div>
+			
+			<!-- En random artikel med en form -->
+			<article>
+				<h3>Nyhetsbrev</h3>
+					
+				<form>
+					<p>Namn: <input type="text" placeholder="Namn här.." name="namne" required></p>
+					<p>Email <input type="email" placeholder="E-post här" name="email" required></p>
+					<input type="submit" value="Subscribe">
+				</form>
+			</article>
+				
+		</section>
+		
+		<!-- Footer som beskriver när sidan senast blev uppdaterad -->
+		<footer>
+			<p>Senast uppdaterad: 2021-03-26</p>
+		</footer>
+		
+	</body>
+</html>
