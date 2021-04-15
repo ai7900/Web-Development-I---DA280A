@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+:root{
+	--navColor: #111211;
+	--headColor: #a0a0a0;
+}
+
+body{
+	background-color: #E3E3E3;
+}
+
+p { 
+	font-family: Verdana, sans-serif;
+}
+
+h1{
+	font-family: 'Impact', cursive;
+	font-size: 50px;
+}
+
+#mainWrapper{
+	background-color: var(--navColor);
+	border: inset 5px #226;
+	border-radius: 5px;
+}
+
+#mainWrapper:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#navWrapper{
+	background-color: var(--navColor);
+	width: 25%;
+	float: left;
+	margin: center;
+	text-align: center;
+}
+
+/* Den vänsta kolumnen */
+#navWrapper img{
+	width: 75%;
+	border-radius: 20px;
+}
+
+#navWrapper h1{
+	color: #fff;
+}
+
+#navWrapper a{
+	color: #000;
+	background-color: #ddd;
+	display: block;
+	text-decoration: none;
+	border-radius: 10px;
+	width: 90%;
+	height: 40px;
+	margin: 0 15px 20px 15px;
+	line-height: 40px;
+}
+
+#navWrapper a:hover, a:focus{
+	background-color: #333;
+	color: #eee;
+}
+
+/* huvudkolumnerna till höger */
+#headsectionWrapper{
+	background-color: var(--headColor);
+	width: 75%;
+	float: right;
+}
+
+#headsectionWrapper h1{
+	margin-left: 3%;
+}
+
+.imgDiv{
+	width: 29%;
+	float:left;
+	margin-left: 3%;
+	font-size: 14px;
+}
+
+.imgDiv img{
+	width: 75%;
+	border-radius: 20px;
+}
+
+.pSection{
+	width: 50%;
+	margin: 3%;
+}
+
+#imgSection{
+	width: 36%;
+	float: right;
+	margin: 3%;
+	border-style: solid;
+	border-width: 5px;
+	border-color: #fff;
+	box-shadow: 2px 2px 4px #000;
+}
+
+hr{
+	clear: both;
+	width: 95%;
+}
+
+footer{
+	text-align: center;
+	font-style: italic;
+}
+
+/* Mobil-anpassad CSS */
+@media screen and (max-width:480px){
+	
+	#navWrapper{
+		width: 100%;
+		float:left;
+	}
+	
+	#navWrapper img{
+		display: none;
+	}
+	
+	#headsectionWrapper{
+		width: auto;
+	}
+	
+	#headsectionWrapper h1{
+		text-align: center;
+	}
+	
+	.imgDiv{
+		width:85%;
+		margin-left:7%;
+		font-size:14px;
+		text-align: center;
+	}
+	
+	.imgDiv img{
+		width: 95%;
+	}
+	
+	.pSection{
+		width: 95%;
+		text-align: center;
+	}
+	
+	#imgSection{
+		width: 80%;
+		float: none;
+		margin: 0 auto;
+		display: block;
+	}
+}
+
