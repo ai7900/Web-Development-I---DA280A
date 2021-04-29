@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+/* Lite variabler */
+/* Enklare att ändra färg färg för många element samtidigt på detta sätt */
+/* Jag tycker om att använda variabler */
 :root{
 	--navColor: #111211;
 	--headColor: #a0a0a0;
